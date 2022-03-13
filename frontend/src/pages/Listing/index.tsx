@@ -18,7 +18,7 @@ function Listing() {
         number: 0,
         first: true,
         numberOfElements: 0,
-        empty: true,
+        empty: true
     });
 
     useEffect(() => {
@@ -32,19 +32,16 @@ function Listing() {
 
     return (
         <>
-            <p>{pageNumber}</p>
             <Pagination />
 
             <div className="container">
                 <div className="row">
                     {page.content.map(movie => (
-                        <div className="col-sm-6 col-lg-4 col-xl-3 mb-3">
+                        <div key={movie.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
                             <MovieCard movie={movie} />
                         </div>
                     )
-                    )};
-
-
+                    )}
                 </div>
             </div>
         </>
